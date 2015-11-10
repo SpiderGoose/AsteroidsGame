@@ -1,20 +1,27 @@
 //your variable declarations here
+SpaceShip mango;
+
+
 public void setup() 
 {
 size(1000,1000);
 background(30);
+mango = new SpaceShip();
 }
+
 public void draw() 
 {
   //your code here
+  mango.move();
+  mango.show();
 }
 class SpaceShip extends Floater  
 {   
   public SpaceShip()
   {
     corners =10;
-    int[] xS = {12,5,5,0,-8,-4,-8,0,5,5,12};
-    int[] yS = {0,-3,-10,-4,-7,0,6,4,10,2,0};
+    int[] xS = {12*2,5*2,5*2,0,-8*2,-4*2,-8*2,0,5*2,5*2,12*2};
+    int[] yS = {0,-3*2,-10*2,-4*2,-7*2,0,6*2,4*2,10*2,2*2,0};
     xCorners = xS;
     yCorners = yS;
     myColor = 255;
@@ -24,6 +31,16 @@ class SpaceShip extends Floater
     myDirectionY=0;
     myPointDirection=0;
   }
+   public void setX(int x) {myCenterX = x;}
+  public int getX() {return (int)myCenterX;}  
+  public void setY(int y) {myCenterY = y;}   
+  public int getY() {return (int)myCenterY;} 
+  public void setDirectionX(double x) {myDirectionX = x;}  
+  public double getDirectionX() {return myDirectionX;}   
+  public void setDirectionY(double y) {myDirectionY = y;}  
+  public double getDirectionY() {return myDirectionY;} 
+  public void setPointDirection(int degrees) {myPointDirection = degrees;}   
+  public double getPointDirection() {return myPointDirection;}
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
@@ -102,3 +119,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   }   
 } 
 
+public void keyPressed()
+{
+  
+}
