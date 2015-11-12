@@ -14,6 +14,41 @@ public void draw()
   //your code here
   mango.move();
   mango.show();
+   if(left == true)
+  {
+    bob.rotate(-5);    
+  }
+  if(right == true)
+  {
+    bob.rotate(5);
+  }
+  if(up == true)
+  {
+    mango.accelerate(0.1);
+  }
+  if(down == true)
+  {
+    mango.accelerate(-0.1);
+  }
+}
+public void(KeyPressed)
+{
+if(keyCode == LEFT)
+  {
+    left = true;
+  }
+  if (keyCode == RIGHT)
+  {
+    right = true;
+  }
+  if(keyCode == UP)
+  {
+    up = true;
+  }
+  if (keyCode == DOWN)
+  {
+    down = true;
+  }
 }
 class SpaceShip extends Floater  
 {   
@@ -121,5 +156,8 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
 
 public void keyPressed()
 {
-  
+  if(keyCode == UP)
+    up = true;
+  if(keyCode == RIGHT)
+    RIGHT = true;
 }
