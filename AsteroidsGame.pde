@@ -1,5 +1,9 @@
 //your variable declarations here
 SpaceShip mango;
+boolean left = false;
+boolean right = false;
+boolean up = false;
+boolean down = false;
 
 
 public void setup() 
@@ -9,18 +13,19 @@ background(30);
 mango = new SpaceShip();
 }
 
+
 public void draw() 
 {
-  //your code here
-  mango.move();
+ 
   mango.show();
+   mango.move();
    if(left == true)
   {
-    bob.rotate(-5);    
+    mango.rotate(-5);    
   }
   if(right == true)
   {
-    bob.rotate(5);
+    mango.rotate(5);
   }
   if(up == true)
   {
@@ -30,26 +35,9 @@ public void draw()
   {
     mango.accelerate(-0.1);
   }
+  
 }
-public void(KeyPressed)
-{
-if(keyCode == LEFT)
-  {
-    left = true;
-  }
-  if (keyCode == RIGHT)
-  {
-    right = true;
-  }
-  if(keyCode == UP)
-  {
-    up = true;
-  }
-  if (keyCode == DOWN)
-  {
-    down = true;
-  }
-}
+
 class SpaceShip extends Floater  
 {   
   public SpaceShip()
@@ -154,10 +142,22 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   }   
 } 
 
-public void keyPressed()
+public void KeyPressed()
 {
-  if(keyCode == UP)
+if(key =='a' || key =='A')
+  {
+    left = true;
+  }
+ // if (key =='d' || key =='D')
+  //{
+  //  right = true;
+  //}
+  if(key =='w' || key =='W')
+  {
     up = true;
-  if(keyCode == RIGHT)
-    RIGHT = true;
+  }
+  if (key =='s' || key =='S')
+  {
+    down = true;
+  }
 }
