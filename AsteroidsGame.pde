@@ -16,7 +16,7 @@ mango = new SpaceShip();
 
 public void draw() 
 {
- 
+   background(30);
   mango.show();
    mango.move();
    if(left == true)
@@ -37,6 +37,58 @@ public void draw()
   }
   
 }
+
+public void keyPressed() 
+{
+  if(keyCode == LEFT)
+  {
+    left = true;  
+  }
+  if(keyCode == RIGHT)
+  {
+    right = true;
+  }
+  if(keyCode == UP)
+  {
+    up = true;
+  }
+  if (keyCode == DOWN)
+  {
+    down = true;
+  }
+
+  if(key == 'H' || key =='h')
+  {
+    up = false;
+    down =false;
+    right =false;
+    left = false;
+   mango.setX(((int)Math.random())*800); 
+   mango.setY(((int)Math.random())*800);
+
+  }
+}
+
+public void keyReleased() 
+{
+  if(keyCode == LEFT)
+  {
+    left = false;  
+  }
+  if(keyCode == RIGHT)
+  {
+    right = false;
+  }
+  if(keyCode == UP)
+  {
+    up = false;
+  }
+  if (keyCode == DOWN)
+  {
+    down = false;
+  }
+}
+
 
 class SpaceShip extends Floater  
 {   
@@ -142,22 +194,3 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   }   
 } 
 
-public void KeyPressed()
-{
-if(key =='a' || key =='A')
-  {
-    left = true;
-  }
- // if (key =='d' || key =='D')
-  //{
-  //  right = true;
-  //}
-  if(key =='w' || key =='W')
-  {
-    up = true;
-  }
-  if (key =='s' || key =='S')
-  {
-    down = true;
-  }
-}
