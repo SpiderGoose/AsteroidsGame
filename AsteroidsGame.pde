@@ -63,8 +63,8 @@ public void keyPressed()
     down =false;
     right =false;
     left = false;
-   mango.setX(((int)Math.random())*800); 
-   mango.setY(((int)Math.random())*800);
+   mango.setX(((int)Math.random()*800)); 
+   mango.setY(((int)Math.random()*800));
 
   }
 }
@@ -117,6 +117,34 @@ class SpaceShip extends Floater
   public void setPointDirection(int degrees) {myPointDirection = degrees;}   
   public double getPointDirection() {return myPointDirection;}
 }
+
+
+class Asteroid extends Floater
+{
+  public Asteroid()
+  {
+    corners = 5;
+    int[] xS ={0,15,43,-20,0};
+    int[] yS ={0,20,-25,-20,0}; 
+    xCorners = xS;
+    yCorners = yS;
+    myColor = 255;
+    myCenterX=300;
+    myCenterY=300;
+    myDirectionX=0;
+    myDirectionY=0;
+    myPointDirection=0;
+
+  }
+
+}
+
+
+
+
+
+
+
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
   protected int corners;  //the number of corners, a triangular floater has 3   
