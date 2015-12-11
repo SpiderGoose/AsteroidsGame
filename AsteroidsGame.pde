@@ -1,3 +1,4 @@
+
 //your variable declarations here
 SpaceShip mango;
 ArrayList <Asteroid>  rocks = new ArrayList <Asteroid>();
@@ -238,7 +239,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   }   
 } 
 
-class Star
+class Star extends Floater
 {
   int myX, myY, mySize;
   Star()
@@ -246,14 +247,31 @@ class Star
     myX = (int)(Math.random()*1000);
     myY = (int)(Math.random()*1000);
      mySize = (int)(Math.random()*12)+5;
+
+     int[] xS = {12*2,5*2,5*2,0,-8*2,-4*2,-8*2,0,5*2,5*2,12*2};
+    int[] yS = {0,-3*2,-10*2,-4*2,-7*2,0,6*2,4*2,10*2,2*2,0};
+     xCorners = xS;
+     yCorners = yS;
+      fill(#C69CC8);
+    strokeWeight(2);
+    stroke(255);
   }
-  void show()
+  /*void show()
   {
     fill(#C69CC8);
     strokeWeight(2);
     stroke(255);
-    ellipse(myX,myY,mySize,mySize);
-  }
+    //ellipse(myX,myY,mySize,mySize);
+
+beginShape();         
+    for(int nI = 0; nI < corners; nI++)    
+    {     
+     
+      vertex(xcorners,ycorners);    
+    }   
+    endShape(CLOSE);  
+
+  }*/
 }
 
 public void keyPressed()
